@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "umi": "^2.12.3"
+    "umi": "^2.12.3",
+    "umi-plugin-react": "^1.14.6"
+  },
+  "dependencies": {
+    "antd": "^3.26.0"
   }
 }
