@@ -13,6 +13,7 @@
     "umi-plugin-react": "^1.14.6"
   },
   "dependencies": {
-    "antd": "^3.26.0"
+    "antd": "^3.26.0",
+    "store": "^2.0.12"
   }
 }
