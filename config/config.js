@@ -4,13 +4,18 @@ export default {
     {
       path: '/login',
       component: './login',
-    }
+    },
+    {
+      path: '/home',
+      component: './home',
+    },
   ],
   plugins: [
     [
       "umi-plugin-react",
       {
         antd: true,
+        dva: true,
       }
     ]
   ],

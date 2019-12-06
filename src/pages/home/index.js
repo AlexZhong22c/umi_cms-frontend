@@ -1,0 +1,9 @@
+// import styles from './index.less';
+
+export default function() {
+  return (
+    <div>
+      <h1>Home Page</h1>
+    </div>
+  );
+}
