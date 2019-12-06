@@ -55,7 +55,12 @@ class LoginForm extends Component {
             getFieldDecorator('username', {
               initialValue: initialValues.username,
               rules: [{ validator: this.checkUsername }]
-            })(<Input prefix={<Icon type="user" className={styles['login-form-icon']} />} placeholder={usernamePlaceholder} />)
+            })(
+              <Input prefix={
+                  <Icon type="user" className={styles['login-form-icon']} />
+                } placeholder={usernamePlaceholder}
+              />
+            )
           }
         </Form.Item>
         <Form.Item>
@@ -63,7 +68,12 @@ class LoginForm extends Component {
             getFieldDecorator('password', {
               initialValue: initialValues.password,
               rules: [{ required: true, message: '请输入密码' }]
-            })(<Input type="password" prefix={<Icon type="lock" className={styles['login-form-icon']} />} placeholder={passwordPlaceholder} />)
+            })(
+              <Input type="password" prefix={
+                  <Icon type="lock" className={styles['login-form-icon']} />
+                } placeholder={passwordPlaceholder} 
+              />
+            )
           }
         </Form.Item>
         {
@@ -72,13 +82,19 @@ class LoginForm extends Component {
               getFieldDecorator('email', {
                 initialValue: initialValues.email,
                 rules: [{ required: true, message: '请输入邮箱' }]
-              })(<Input type="email" prefix={<Icon type="mail" className={styles['login-form-icon']} />} placeholder={emailPlaceholder} />)
+              })(
+                <Input type="email" prefix={
+                    <Icon type="mail" className={styles['login-form-icon']} />
+                  } placeholder={emailPlaceholder} 
+                />
+              )
             }
           </Form.Item>
         }
 
         <Form.Item>
-          <Button type="primary" style={{marginRight: '16px'}} htmlType="submit" className={styles['login-form-button']}>
+          <Button type="primary" style={{marginRight: '16px'}} htmlType="submit"
+            className={styles['login-form-button']}>
             {this.props.isSignin ? '注册' : '登录'}
           </Button>
           <a onClick={this.props.isSignin ? this.props.turnOffSignin : this.props.turnOnSignin}>
