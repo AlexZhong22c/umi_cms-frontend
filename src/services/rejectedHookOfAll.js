@@ -24,6 +24,19 @@ export default function (error = {}) {
     throw error;
   }
 
+  if (error.message && error.message.includes('timeout')) {
+    // 进入这个if分支，是请求超时。这个错误是axios给出的。
+    if (!lockOfModal) {
+      lockOfModal = true;
+      Modal.error({
+        content: '请求超时，请稍后重试',
+        maskClosable: true,
+        onCancel: () => lockOfModal = false
+      });
+    }
+    throw error;
+  }
+
   // 经过 if else 能执行到这里的，一般是service层中发生的js原生的错误，或者
   // 也可能是在前面拦截器切面中程序员手动throw的错误。
   // 因此，注意一下error的数据格式可能有所不同。如果有需要的话增设if else区分打印error的格式。
