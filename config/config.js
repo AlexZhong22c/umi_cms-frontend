@@ -24,6 +24,7 @@ export default {
       {
         antd: true,
         dva: true,
+        locale: { enable: true }
       }
     ]
   ],
