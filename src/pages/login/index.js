@@ -14,6 +14,8 @@ import styles from './index.less';
     turnOffSignin: () => ({ type: 'login/turnOffSignin' })
   }
 )
+
+@Form.create()
 class LoginForm extends Component {
   checkUsername = (rule, value, callback) => {
     if (!value) return callback('请输入用户名');      
@@ -56,9 +58,11 @@ class LoginForm extends Component {
               initialValue: initialValues.username,
               rules: [{ validator: this.checkUsername }]
             })(
-              <Input prefix={
+              <Input
+                prefix={
                   <Icon type="user" className={styles['login-form-icon']} />
-                } placeholder={usernamePlaceholder}
+                }
+                placeholder={usernamePlaceholder}
               />
             )
           }
@@ -69,9 +73,11 @@ class LoginForm extends Component {
               initialValue: initialValues.password,
               rules: [{ required: true, message: '请输入密码' }]
             })(
-              <Input type="password" prefix={
+              <Input type="password"
+                prefix={
                   <Icon type="lock" className={styles['login-form-icon']} />
-                } placeholder={passwordPlaceholder} 
+                }
+                placeholder={passwordPlaceholder} 
               />
             )
           }
@@ -83,9 +89,11 @@ class LoginForm extends Component {
                 initialValue: initialValues.email,
                 rules: [{ required: true, message: '请输入邮箱' }]
               })(
-                <Input type="email" prefix={
+                <Input type="email"
+                  prefix={
                     <Icon type="mail" className={styles['login-form-icon']} />
-                  } placeholder={emailPlaceholder} 
+                  }
+                  placeholder={emailPlaceholder} 
                 />
               )
             }
@@ -105,7 +113,6 @@ class LoginForm extends Component {
     )
   }
 }
-const WrappedLoginForm = Form.create()(LoginForm)
 
 export default class Login extends Component {
   render() {
@@ -113,7 +120,7 @@ export default class Login extends Component {
       <div className={styles['login-page']}>
         <div className={styles['login-form-container']}>
           <h1>umi-egg-cms</h1>
-          <WrappedLoginForm />
+          <LoginForm />
         </div>
       </div>
     )

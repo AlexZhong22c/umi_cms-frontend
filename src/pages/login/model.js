@@ -1,14 +1,8 @@
 import { message } from 'antd';
 import router from 'umi/router';
-import services from '@/services';
+import service from './service';
 
-const ENTITY = '/auth';
 
-const signin = params => services.post(`${ENTITY}/signin`, params);
-
-const login = params => services.post(`${ENTITY}/login`, params);
-
-// const test = params => services.post('/api/test/bad', {});
 
 const state = {
   isSignin: true
@@ -21,12 +15,12 @@ export default {
   effects: {
     // actions: login/signin:
     *signin({ payload }, { call, put }) {
-      yield call(signin, payload);
+      yield call(service.signin, payload);
       message.success('注册成功');
       yield put({ type: 'turnOffSignin' });
     },
     *login({ payload }, { call, put }) {
-      const res = yield call(login, payload)
+      const res = yield call(service.login, payload)
 
       const token = res.result;
 
