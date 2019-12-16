@@ -20,6 +20,7 @@ npx umi dev
 - react hooks
   - 用react hooks分离业务逻辑模块。
   - 封装 Modal 组件和逻辑；封装 Pagination 逻辑
+  - (用hooks实现“带查询表单的分页表格增删改查”)
 
 api在项目中演示：
 
