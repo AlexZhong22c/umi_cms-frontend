@@ -1,4 +1,4 @@
-import { Modal } from 'antd';
+import { Modal, notification } from 'antd';
 // 该模块应该被置于拦截器钩子链的末端。前面所有的拦截切面都应当
 // 不设置rejected，这样，所有错误都会统一进到这个rejected函数中处理。
 
@@ -34,6 +34,15 @@ export default function (error = {}) {
         onCancel: () => lockOfModal = false
       });
     }
+    throw error;
+  }
+
+  // 这个提示，可以思考怎么优化一下交互：
+  if (error.message && error.message.includes('404')) {
+    // 这个错误是axios给出的。
+    notification.error({
+      message: '接口不存在: ' + error.request.responseURL.split('/api')[1]
+    })
     throw error;
   }
 
