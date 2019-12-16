@@ -15,6 +15,14 @@ export default {
           path: 'home',
           component: './home',
         },
+        {
+          path: 'category',
+          component: './category',
+        },
+        {
+          path: 'article',
+          component: './article',
+        },
       ]
     },
   ],
