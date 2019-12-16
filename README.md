@@ -21,7 +21,15 @@ npx umi dev
   - 用react hooks分离业务逻辑模块。
   - 封装 Modal 组件和逻辑；封装 Pagination 逻辑
 
+api在项目中演示：
 
+- 编辑一条记录的时候，载入到表单？ mapPropsToFields (antd)
+- 如何拿到“在函数组件中的”组件实例？forwardRef useImperativeHandle (react)
+
+
+#### 在第一页删除一条记录的时候，还是想触发去获取第一页的列表 (用hooks useEffect的时候)
+
+声明时，useEffect监听pager对象。处理事件时，需要获取列表的时候替换掉 pager 对象以触发监听回调。
 
 #### 在不需要切换语言的前提下，如何把umi体系的antd初始化为中文
 
