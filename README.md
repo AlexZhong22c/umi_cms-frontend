@@ -17,6 +17,9 @@ npx umi dev
   - 服务器接口不存在 通知提示
   - (错误统一到一个rejected函数中处理)
 - saga尽可能不使用catch error(在其他js体系下，本来业务层就是可不catch的；但是在dva体系下，需要加onError，防止错误最终没有被catch而导致新js事件无法正常触发部分代码)
+- react hooks
+  - 用react hooks分离业务逻辑模块。
+  - 封装 Modal 组件和逻辑；封装 Pagination 逻辑
 
 
 
