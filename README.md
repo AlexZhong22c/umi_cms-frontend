@@ -27,6 +27,11 @@ api在项目中演示：
 - 编辑一条记录的时候，载入到表单？ mapPropsToFields (antd)
 - 如何拿到“在函数组件中的”组件实例？forwardRef useImperativeHandle (react)
 
+#### 如何拿到useState最新的值
+
+方法有很多。而在这里直接用`useRef`同步一份。
+
+参考src/hooks/useStateNewest.js。
 
 #### 在第一页删除一条记录的时候，还是想触发去获取第一页的列表 (用hooks useEffect的时候)
 
