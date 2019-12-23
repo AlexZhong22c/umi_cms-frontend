@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Row, Col, Table, Button, Input, message, Popconfirm, Modal } from 'antd';
 import service from './service';
 import usePagination from '../../hooks/usePagination';
-import AddUpdateModalInstall from './business/AddUpdateModal';
-import DetailModalInstall from './business/DetailModal';
+import useAddUpdateModal from './business/AddUpdateModal';
+import useDetailModal from './business/DetailModal';
+import useCommentModal from './business/CommentModal';
 import dayjs from 'dayjs';
 
 export default function Article() {
@@ -62,6 +63,7 @@ export default function Article() {
 
     Modal.confirm({
       content: `确定要删除共计${ids.length}项?`,
+      maskClosable: true,
       onOk: async () => {
         await service.batchDel({ids})
         changePage(1);
@@ -118,7 +120,7 @@ export default function Article() {
     },
     {
       title: '创建时间',
-      // width: 100,
+      width: 120,
       dataIndex: 'createtime',
       render: (text, record, index) => {
         return (
@@ -143,11 +145,12 @@ export default function Article() {
     }
   ];
 
-  const [AddUpdateModal, { onShowModal }] = AddUpdateModalInstall({
+  const [AddUpdateModal, { onShowModal }] = useAddUpdateModal({
     changePage,
     refreshPage
   });
-  const [DetailModal, showDetailModal] = DetailModalInstall();
+  const [DetailModal, showDetailModal] = useDetailModal();
+
   return (
     <>
       {/* 查询表单区域的样式，先做这样简化设计： */}

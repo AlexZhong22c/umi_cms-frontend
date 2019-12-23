@@ -14,7 +14,6 @@ import styles from './index.less';
     turnOffSignin: () => ({ type: 'login/turnOffSignin' })
   }
 )
-
 @Form.create()
 class LoginForm extends Component {
   checkUsername = (rule, value, callback) => {

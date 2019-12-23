@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Row, Col, Table, Button, Input, message, Popconfirm, Modal } from 'antd';
 import service from './service';
 import usePagination from '../../hooks/usePagination';
-import AddUpdateModalInstall from './business/AddUpdateModal';
+import useAddUpdateModal from './business/AddUpdateModal';
 import dayjs from 'dayjs';
 
 export default function Category() {
@@ -56,6 +56,7 @@ export default function Category() {
 
     Modal.confirm({
       content: `确定要删除共计${ids.length}项?`,
+      maskClosable: true,
       onOk: async () => {
         await service.batchDel({ids})
         changePage(1);
@@ -109,7 +110,7 @@ export default function Category() {
     }
   ];
 
-  const [AddUpdateModal, { onShowModal }] = AddUpdateModalInstall({
+  const [AddUpdateModal, { onShowModal }] = useAddUpdateModal({
     changePage,
     refreshPage
   });

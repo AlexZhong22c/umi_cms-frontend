@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'antd';
 
-const Install = () => {
+const use = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [item, setItem] = useState({});
 
@@ -35,4 +35,4 @@ const Install = () => {
   ];
 };
 
-export default Install;
+export default use;

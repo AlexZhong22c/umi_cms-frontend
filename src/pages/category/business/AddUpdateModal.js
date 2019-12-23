@@ -4,7 +4,7 @@ import service from '../service';
 import useAddUpdateModal from '../../../hooks/useAddUpdateModal';
 
 // 把依赖捕获进来：
-function Install({ changePage, refreshPage }) {
+function use({ changePage, refreshPage }) {
   const FormDataModel = () => ({
     id: undefined,
     name: ''
@@ -100,4 +100,4 @@ function Install({ changePage, refreshPage }) {
   ]
 }
 
-export default Install;
+export default use;
