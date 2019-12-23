@@ -1,5 +1,5 @@
 export default function (request) {
-  const { token } = window.g_app._store.getState().token;
+  const token = window.g_app._store.getState().token;
 
   if (token) {
     // TODO: 目前后端好像没有校验token 401

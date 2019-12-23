@@ -22,9 +22,12 @@ export default {
     *login({ payload }, { call, put }) {
       const res = yield call(service.login, payload)
 
-      const token = res.result;
+      const { token } = res.result;
 
       yield put({ type: 'token/setToken', payload: token });
+      yield put({ type: 'userInfo/setUserInfo', payload: {
+        username: payload.username
+      } });
       router.push('/home');
       message.success('登录成功');
     },

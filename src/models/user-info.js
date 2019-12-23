@@ -1,11 +1,11 @@
 import localStore from '../localStore';
 
 export default {
-  namespace: 'token',
-  state: localStore.getUserToken() || '',
+  namespace: 'userInfo',
+  state: localStore.getUserInfo() || {},
   effects: {
-    *setToken({ payload }, { put }) {
-      localStore.setUserToken(payload);
+    *setUserInfo({ payload }, { put }) {
+      localStore.setUserInfo(payload);
       yield put({ type: 'set', payload });
     }
   },
