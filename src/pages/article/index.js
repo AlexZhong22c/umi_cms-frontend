@@ -136,6 +136,7 @@ export default function Article() {
           <Button.Group>
             <Button onClick={() => showDetailModal(record)}>查看</Button>
             <Button style={{ marginLeft: 10 }} type='primary' onClick={() => onShowModal(record)}>编辑</Button>
+            <Button style={{ marginLeft: 10 }} onClick={() => showCommentModal(record)}>评论</Button>
             <Popconfirm title="确认删除?" onConfirm={() => delItem(record.id)}>
               <Button style={{ marginLeft: 10 }} type='danger'>删除</Button>
             </Popconfirm>
@@ -150,6 +151,10 @@ export default function Article() {
     refreshPage
   });
   const [DetailModal, showDetailModal] = useDetailModal();
+  const [
+    CommentModal,
+    showCommentModal
+  ] = useCommentModal();
 
   return (
     <>
@@ -205,6 +210,7 @@ export default function Article() {
 
       <AddUpdateModal />
       <DetailModal />
+      <CommentModal />
     </>
   );
 }
