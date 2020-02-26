@@ -93,6 +93,9 @@ const use = () => {
 
   const onCancel = useCallback(() => setModalVisible(false), []);
 
+  // 目标是要从use函数里面抽出来，这样能减少很多次这函数的执行?????????????
+  // 即便是用了React.memo(也不行啊)
+  // 用useMemo肯定不行啊，这个react组件不依赖props，反而去依赖闭包，即便用不到，肯定也是常渲染?????????
   const CommentModal = () => {
     const commentListProps = {
       loadMore, loading, dataSource
