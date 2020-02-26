@@ -1,3 +1,5 @@
+> [该项目对应的后端部分](https://github.com/AlexZhong22c/egg_cms-backend)
+
 ## 架构和预览
 
 - [x] antd
@@ -45,7 +47,7 @@ axios拦截器分为请求拦截器和响应拦截器，要注册就是在对应
 
 拦截器等回调函数，通过axios构造函数内部逻辑的拼接可以等价为一个Promise式子：
 
-![](./README_images/umi_cms-frontend_axios-interceptors.png)
+![axios路由拦截器的注册原理](./README_images/umi_cms-frontend_axios-interceptors.png)
 
 ```js
 promise.
