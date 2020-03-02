@@ -1,5 +1,12 @@
 > [该项目对应的后端部分](https://github.com/AlexZhong22c/egg_cms-backend)
 
+# umi_cms-frontend 内容管理系统前端
+
+**功能实现：**
+
+- 用户登入、用户登出
+- 用户/文章分类/文章 各个模块增删查改+列出列表+分页列表
+
 ## 架构和预览
 
 - [x] antd
