@@ -102,8 +102,8 @@ promise.
 
 ```js
   effects: {
-    *setUserInfo({ payload }, { put }) {
-      localStore.setUserInfo(payload);
+    *setUserInfo({ payload }, { put, call }) {
+      yield call([localStore, 'setUserInfo'], payload);
       yield put({ type: 'set', payload });
     }
   }

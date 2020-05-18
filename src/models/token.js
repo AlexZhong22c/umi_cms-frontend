@@ -4,8 +4,8 @@ export default {
   namespace: 'token',
   state: localStore.getUserToken() || '',
   effects: {
-    *setToken({ payload }, { put }) {
-      localStore.setUserToken(payload);
+    *setToken({ payload }, { put, call }) {
+      yield call([localStore, 'setUserToken'], payload);
       yield put({ type: 'set', payload });
     }
   },
