@@ -96,10 +96,10 @@ function use({ changePage, refreshPage }) {
       const { formData } = props;
       return {
         category: Form.createFormField({
-          value: formData.category.id
+          value: formData.category ? formData.category.id : undefined
         }),
         author: Form.createFormField({
-          value: formData.author.id
+          value: formData.author ? formData.author.id : undefined
         }),
         title: Form.createFormField({
           value: formData.title

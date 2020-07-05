@@ -95,7 +95,7 @@ export default function Article() {
       dataIndex: 'author',
       render: (text, record, index) => {
         return (
-          <div>{record.author.username}</div>
+          <div>{record.author && record.author.username}</div>
         )
       }
     },
@@ -114,7 +114,7 @@ export default function Article() {
       dataIndex: 'category',
       render: (text, record, index) => {
         return (
-          <div>{record.category.name}</div>
+          <div>{record.category && record.category.name}</div>
         )
       }
     },
