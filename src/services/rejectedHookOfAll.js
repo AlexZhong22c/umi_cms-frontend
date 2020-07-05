@@ -13,6 +13,7 @@ export default function (error = {}) {
   if (error.message && error.message.includes('Network Error')) {
     // 进入这个if分支，绝大多数情况下，要么服务器完全崩溃了，要么该客户端暂时无法接入互联网
     // 这个错误是axios给出的。
+    // PS: 判断客户端是否脱机window.navigator.onLine。
     if (!lockOfModal) {
       lockOfModal = true;
       Modal.error({
