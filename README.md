@@ -1,6 +1,6 @@
 > [该项目对应的后端部分](https://github.com/AlexZhong22c/egg_cms-backend)
 
-# umi_cms-frontend 内容管理系统前端
+# umi_cms-frontend 内容管理系统 前端
 
 **功能实现：**
 
