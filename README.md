@@ -15,6 +15,20 @@
 
 npx umi dev
 
+## 页面效果
+
+后台表格的基础功能：
+
+![axios路由拦截器的注册原理](./README_images/umi_cms-frontend_table-basic.png)
+
+添加、编辑功能+表单校验：
+
+![axios路由拦截器的注册原理](./README_images/umi_cms-frontend_article-edit.png)
+
+给文章添加评论 联表关系：
+
+![axios路由拦截器的注册原理](./README_images/umi_cms-frontend_article-add-comment.png)
+
 ## 代码逻辑演示
 
 **架构层面 演示：**
