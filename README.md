@@ -133,3 +133,8 @@ services层：services层的错误应该抛到此层之外，也就是通常到�
 
 - [rootSaga try catch restart，这就类似于 某一个 woker 进程 挂了，自动重启一个新的 woker 进程一样](https://www.yuque.com/lovesueee/blog/redux-saga)
 - [在架构上层try完之后，通过类似express.js的`const { err, callback } = fnCall(/**/)`的形式给出错误(不推荐此法)](https://github.com/dvajs/dva/issues/2097)
+
+
+## 备注：
+
+node ≥ 14
